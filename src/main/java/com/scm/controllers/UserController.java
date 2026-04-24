@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.scm.entities.User;
 import com.scm.services.UserService;
 
 @Controller
@@ -19,28 +20,25 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // user dashbaord page
-
-    @RequestMapping(value = "/dashboard")
+    // dashboard
+    @RequestMapping("/dashboard")
     public String userDashboard() {
-        System.out.println("User dashboard");
         return "user/dashboard";
     }
 
-    // user profile page
-
-    @RequestMapping(value = "/profile")
+    // profile
+    @RequestMapping("/profile")
     public String userProfile(Model model, Authentication authentication) {
+
+        if (authentication != null && authentication.isAuthenticated()) {
+
+            String username = authentication.getName(); // email/username
+
+            User user = userService.getUserByEmail(username);
+
+            model.addAttribute("user", user);
+        }
 
         return "user/profile";
     }
-
-    // user add contacts page
-
-    // user view contacts
-
-    // user edit contact
-
-    // user delete contact
-
 }

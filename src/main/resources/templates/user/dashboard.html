@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html
-  lang="en"
-  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+        lang="en"
+        th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
 >
-  <head>
-    <title data-th-text="${loggedInUser.name}+' |  Dashboard'">
-      Profile Page
-    </title>
-  </head>
-  <body>
-    <div id="content">
-      <!-- sidebar -->
+<head>
+  <title data-th-text="${loggedInUser.name} + ' | Dashboard'">
+    Dashboard
+  </title>
+</head>
 
-      <!-- user is logged in : sidebar -->
+<body>
+<div id="content">
 
-      <div th:if="${loggedInUser}">
-        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
-      </div>
+  <!-- Sidebar -->
+  <div th:if="${loggedInUser}">
+    <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+  </div>
 
-      <div class="sm:pl-64 pt-20" style="height: 1000px">
-        <div class="flex justify-center flex-col items-center">
-          <h1 class="text-5xl">Welcome to Dashbaord page</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur, ratione!
-          </p>
+  <!-- Main Content -->
+  <div class="sm:pl-64 pt-20 min-h-screen bg-gray-900 text-white">
+
+    <div class="flex flex-col items-center justify-center mt-16 text-center">
+
+      <!-- Heading -->
+      <h1 class="text-4xl font-bold mb-4">
+        Welcome, <span th:text="${loggedInUser.name}">User</span> 👋
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-gray-400 text-lg mb-8">
+        Manage your profile, contacts, and stay organized.
+      </p>
+
+      <!-- Cards Section -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+
+        <!-- Profile Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+          <h2 class="text-xl font-semibold mb-2">Profile</h2>
+          <p class="text-gray-400">View and update your personal information</p>
         </div>
+
+        <!-- Contacts Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+          <h2 class="text-xl font-semibold mb-2">Contacts</h2>
+          <p class="text-gray-400">Manage all your saved contacts</p>
+        </div>
+
+        <!-- Add Contact Card -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow hover:scale-105 transition">
+          <h2 class="text-xl font-semibold mb-2">Add Contact</h2>
+          <p class="text-gray-400">Quickly add new contacts</p>
+        </div>
+
       </div>
+
     </div>
 
-    <script>
-      console.log("this is profile page");
-    </script>
-  </body>
+  </div>
+
+</div>
+
+<script>
+  console.log("Dashboard loaded");
+</script>
+</body>
 </html>

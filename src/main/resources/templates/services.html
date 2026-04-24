@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
-  <head>
-  
-    <title>
-      Services
-    </title>
-  </head>
-  <body>
-    <section id="content">
-      <h1>Welcome to services page</h1>
-      <h2>Services offered by SCM</h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas dolore assumenda rerum harum mollitia incidunt nesciunt dignissimos esse dicta reprehenderit quam, quisquam aspernatur enim consequatur accusamus, minima alias odit ducimus.<10></10>
-    </section>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - SCM 2.0</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
 
-  </body>
+<div class="container mt-4">
+
+  <h1>Our Services</h1>
+
+  <p>
+    Smart Contact Manager offers a range of features to make managing contacts simple and efficient.
+  </p>
+
+  <hr>
+
+  <h3>What We Provide</h3>
+
+  <ul>
+    <li>✔ Add, update, and delete contacts</li>
+    <li>✔ Upload profile images using Cloudinary</li>
+    <li>✔ Secure login with Google & GitHub</li>
+    <li>✔ Email verification and notifications</li>
+    <li>✔ Easy search and filtering of contacts</li>
+    <li>✔ Clean and responsive user interface</li>
+  </ul>
+
+  <hr>
+
+  <p>
+    Our aim is to provide a reliable and scalable solution for managing your contacts anytime, anywhere.
+  </p>
+
+</div>
+
+</body>
 </html>

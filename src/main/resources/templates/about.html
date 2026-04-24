@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html
-  lang="en"
-  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
->
-  <head>
-    <title>About Page</title>
-  </head>
-  <body>
-    <div id="content">
-      <h1>Welcome to about page</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur,
-        ratione!
-      </p>
-    </div>
-    <script>
-      console.log("about page");
-    </script>
-    <script>
-      console.log("second about page script");
-    </script>
-  </body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>About - SCM 2.0</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container mt-4">
+
+  <h1>About Smart Contact Manager</h1>
+
+  <p>
+    Smart Contact Manager (SCM 2.0) is a powerful web application designed to help users efficiently manage their personal and professional contacts.
+  </p>
+
+  <p>
+    Built using <b>Spring Boot</b>, <b>Thymeleaf</b>, and <b>MySQL</b>, this application provides a secure and scalable environment for storing important contact information.
+  </p>
+
+  <p>
+    Users can easily add, update, delete, and organize contacts along with profile pictures, social links, and other relevant details.
+  </p>
+
+  <p>
+    The main goal of SCM is to simplify contact management while providing a smooth and user-friendly experience.
+  </p>
+
+  <hr>
+
+  <h3>Key Features</h3>
+  <ul>
+    <li>Secure login system</li>
+    <li>Cloud image upload (Cloudinary)</li>
+    <li>Search and filter contacts</li>
+    <li>Email notifications</li>
+    <li>Modern responsive UI</li>
+  </ul>
+
+</div>
+
+</body>
 </html>
